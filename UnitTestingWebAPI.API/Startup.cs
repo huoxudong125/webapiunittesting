@@ -51,6 +51,9 @@ namespace UnitTestingWebAPI.API
             IContainer container = builder.Build();
             config.DependencyResolver = new AutofacWebApiDependencyResolver(container);
 
+            //To get API controllers
+            SwaggerConfig.Register(config);
+
             appBuilder.UseWebApi(config);
         }
     }
